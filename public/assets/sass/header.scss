@@ -1,0 +1,143 @@
+#header {
+  min-width: 320px;
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+  position: relative;
+  z-index: 4;
+  .logo {
+    position: absolute;
+    transition: all 1s ease-in-out;
+    top: 15px;
+    width: 130px;
+    right: calc(50vw - 30px);
+    z-index: 7;
+  }
+  .menu {
+    flex-direction: column;
+    transition: right 0.5s ease-in-out;
+    width: 300px;
+    height: 100vh;
+    padding-bottom: 50px;
+    background-color: #5e5e5e;
+    position: fixed;
+    right: -300px;
+    top: 0;
+    justify-content: space-between;
+    z-index: 6;
+    nav {
+      flex-direction: column;
+      ul {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin-top: 169px;
+        max-height: calc(100vh - 250px);
+        overflow-y: auto;
+        li {
+          padding: 14px 0;
+          list-style: none;
+          justify-content: center;
+        }
+        a {
+          font-size: 20px;
+          font-family: "roboto", "open-sans";
+          font-weight: medium;
+          text-decoration: none;
+          color: #fff;
+          &:hover {
+            color: green;
+          }
+        }
+      }
+    }
+  }
+  #btn-open,
+  #btn-close {
+    position: absolute;
+    right: 1px;
+    background: var(--white);
+    border: none;
+  }
+}
+.open-menu {
+  overflow: hidden;
+  #header {
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: yellow;
+      z-index: 5;
+    }
+    .menu {
+      right: 0;
+    }
+    .logo {
+      right: 87px;
+      width: 120px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .open-menu {
+    overflow: initial;
+    #header {
+      .overlay {
+        display: none;
+      }
+      .logo {
+        width: 100px;
+        top: 17px;
+        right: calc(100vw - 150px);
+      }
+    }
+  }
+  #header {
+    flex-direction: row;
+    height: 8rem;
+    .logo {
+      width: 200px;
+      top: 35px;
+      right: 80vw;
+    }
+    #btn-open,
+    #btn-close {
+      display: none;
+    }
+    .menu {
+      flex-direction: row;
+      right: initial;
+      position: static;
+      background-color: initial;
+      width: 100%;
+      height: 100px;
+      margin-left: 300px;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0;
+      nav {
+        width: 100%;
+        ul {
+          flex-direction: row;
+          justify-content: center;
+
+          margin-top: 0;
+          li {
+            a {
+              font-size: 20px;
+              font-weight: 600;
+              min-width: 120px;
+              padding: 10px 0;
+              text-align: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+form {
+  flex-direction: column;
+  width: 100%;
+  padding: 0 var(--space);
+
+  .fields {
+    flex-direction: column;
+  }
+  .field {
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: var(--space);
+    label {
+      color: var(--black);
+      color: var(--white);
+      font-size: 16px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      transition: color 0.3s ease-in-out;
+    }
+    input,
+    textarea,
+    select {
+      border: var(--gray-3) 1px solid;
+      line-height: 1.5em;
+      background-color: transparent;
+      padding: 10px;
+      padding-top: 30px;
+      font-size: 16px;
+      color: var(--black);
+      outline: none;
+      border-radius: var(--border-radius);
+      position: relative;
+      z-index: 1;
+      top: 0;
+      transition: border-color 0.3s ease-in-out;
+      width: 100%;
+      &:focus {
+        border-color: var(--gray-3);
+      }
+    }
+  }
+  .actions {
+    button {
+      @include button-green;
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+}
